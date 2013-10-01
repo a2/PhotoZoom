@@ -15,17 +15,6 @@
     #import <QuartzCore/QuartzCore.h>
 #endif
 
-// Disables log messages when debugging is turned off
-#ifndef NDEBUG
-
-#define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
-
-#else
-
-#define DebugLog(message, ...)
-
-#endif
-
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 #define LOG_FRAME(label, frame) DebugLog(@"%@: %f, %f, %f, %f", label, frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)

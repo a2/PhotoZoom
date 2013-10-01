@@ -156,26 +156,6 @@
     }
 }
 
-#pragma mark - Layout Debugging Support
-#pragma mark -
-
-- (void)logRect:(CGRect)rect withName:(NSString *)name {
-    DebugLog(@"%@: %f, %f / %f, %f", name, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-}
-
-- (void)logLayout {
-    DebugLog(@"### PZViewController ###");
-    [self logRect:self.view.window.bounds withName:@"self.view.window.bounds"];
-    [self logRect:self.view.window.frame withName:@"self.view.window.frame"];
-
-    CGRect applicationFrame = [UIScreen mainScreen].applicationFrame;
-    [self logRect:applicationFrame withName:@"application frame"];
-    
-    if ([self.pagingScrollView respondsToSelector:@selector(logLayout)]) {
-        [self.pagingScrollView performSelector:@selector(logLayout)];
-    }
-}
-
 #pragma mark - Orientation
 #pragma mark -
 
@@ -223,10 +203,7 @@
     [photoView startWaiting];
     [self.photosDataSource photoForIndex:index withCompletionBlock:^(UIImage *photo, NSError *error) {
         [photoView stopWaiting];
-        if (error != nil) {
-            DebugLog(@"Error: %@", error);
-        }
-        else {
+        if (!error) {
             [photoView displayImage:photo];
         }
     }];
@@ -248,7 +225,7 @@
 }
 
 - (void)photoViewDidDoubleTwoFingerTap:(PZPhotoView *)photoView {
-    [self logLayout];
+    // do nothing
 }
 
 @end
