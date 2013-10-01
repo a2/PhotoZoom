@@ -1,7 +1,7 @@
 PhotoZoom by Brennan Stehling
 https://alpha.app.net/smallsharptools
 
-Copyright (c) 2013 SmallSharpTools LLC.
+Copyright (c) 2013 SmallSharpTools LLC and PhotoZoom Contributors.
 All rights reserved.
 
 Redistribution and use in source and binary forms are permitted
