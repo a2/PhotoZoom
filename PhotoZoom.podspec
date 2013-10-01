@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.author       = { "Brennan Stehling" => "brennan@smallsharptools.com" }
   s.platform     = :ios, '6.0'
   s.source       = { :git => "https://github.com/a2/PhotoZoom.git", :tag => "v#{s.version}" }
-  s.source_files = 'PhotoZoom/PZPagingScrollView.{h,m}', 'PhotoZoom/PZPhotosDataSource.{h,m}', 'PhotoZoom/PZPhotoView.{h,m}'
+  s.source_files = 'PhotoZoom/PZPagingScrollView.{h,m}', 'PhotoZoom/PZPhotoView.{h,m}'
   s.requires_arc = true
 end
